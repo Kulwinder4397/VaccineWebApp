@@ -1,0 +1,27 @@
+﻿@model IEnumerable<VaccineWebApp.Models.Hospital>
+
+@{
+    ViewData["Title"] = "AllHospital";
+}
+
+<h1 class="heading text-center">All Hospital Details</h1>
+<div class="row" style="margin-bottom:50px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card w-100">
+                <center>
+                    <img src="~/images/hospital.png" alt="" style="width:100%">
+                </center>
+                <div class="card-body">
+                    <h5 class="card-text">
+                        @item.Name
+                    </h5>
+                    <p>@item.Address</p>
+                    <p>@item.ContactNo</p>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>

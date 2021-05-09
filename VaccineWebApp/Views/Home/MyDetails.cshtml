@@ -1,0 +1,33 @@
+﻿@model IEnumerable<VaccineWebApp.Models.PersonalDetail>
+
+@{
+    ViewData["Title"] = "MyDetails";
+}
+
+<h1 class="text-center heading">My Personal Details</h1>
+<hr />
+@if (Model.Count() == 0)
+{
+    <p>
+        <a asp-action="AddPersonDetail" class="btn btn-primary">Please Click To Add Your Personal Details</a>
+    </p>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Name: @item.Name</h1>
+                <p>Address: @item.Address </p>
+                <p>Contact No: @item.ContactNo</p>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-primary">
+                    <img src="~/person/@item.PersonalDetailID@item.Extension" alt="" style="width:100%">
+                </div>
+            </div>
+        </div>
+    }
+}
+    
